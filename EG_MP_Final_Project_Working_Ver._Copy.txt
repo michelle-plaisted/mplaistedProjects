@@ -1,0 +1,569 @@
+public class MyProgram extends ConsoleProgram
+{
+    private String box1;
+    private String box2;
+    private String box3;
+    private String box4;
+    private String box5;
+    private String box6;
+    private String box7;
+    private String box8;
+    private String box9;
+    
+    private String XsOrOs;
+    private String computerPlays;
+    private int gameOver;
+    
+    public void run()
+    {
+        instructions();
+        box1 = " ";
+        box2 = " ";
+        box3 = " ";
+        box4 = " ";
+        box5 = " ";
+        box6 = " ";
+        box7 = " ";
+        box8 = " ";
+        box9 = " ";
+        gameOver = 0;
+        while (gameOver < 9)
+        {
+            userTurn();
+            computerTurn();
+            makeBoard();
+            checkIfDone();
+            gameOver += 1;
+        }
+        //scroll(41);
+        //makeBoard();
+        //final double pi = hasdjfha;
+    }
+    
+    public void instructions()
+    {
+        System.out.println("Welcome to Tic Tac Toe!");
+        System.out.println("In this game, the goal is to get 3 of your own characters in a row");
+        System.out.println("before the computer does.");
+        System.out.println("This can be horizontally, vertically, or diagonally.");
+        System.out.println("Good luck!");
+        System.out.println();
+
+
+
+        System.out.println("When you play, enter a number based on what box you want to choose.");
+        System.out.println("           |          |          ");
+        System.out.println("     1     |    2     |    3     ");
+        System.out.println(" __________|__________|__________");
+        System.out.println("           |          |          ");
+        System.out.println("     4     |    5     |    6     ");
+        System.out.println(" __________|__________|__________");
+        System.out.println("           |          |          ");
+        System.out.println("     7     |    8     |    9     ");
+        System.out.println("           |          |          ");
+        XsOrOs = readLine ("Do you want to be X's or O's? ");
+        if (XsOrOs.equalsIgnoreCase("x"))
+        {
+            computerPlays = "O";
+        }
+        else if (XsOrOs.equalsIgnoreCase ("o"))
+        {
+            computerPlays = "X";
+        }
+        else
+        {
+            XsOrOs = readLine ("Please enter either the letter X or O: ");
+        }
+    }
+    public void scroll(int numLines)
+    {
+        for (int i = 0; i < numLines; i++)
+        {
+            System.out.println();
+        }
+    }
+    public void makeBoard()
+    {
+        System.out.println("           |          |          ");
+        System.out.println("     " + box1 + "     |    " + box2 + "     |    " + box3 + "     ");
+        System.out.println(" __________|__________|__________");
+        System.out.println("           |          |          ");
+        System.out.println("     " + box4 + "     |    " + box5 + "     |    " + box6 + "     ");
+        System.out.println(" __________|__________|__________");
+        System.out.println("           |          |          ");
+        System.out.println("     " + box7 + "     |    " + box8 + "     |    " + box9 + "     ");
+        System.out.println("           |          |          ");
+    }
+    
+    public void userTurn()
+    {
+        System.out.println();
+        int turnChoice = readInt("In what spot number would you like to put an " + XsOrOs + "? ");
+        if (turnChoice == 1 && box1.equals (" "))
+        {
+            box1 = XsOrOs;
+        }
+        else if (turnChoice == 2 && box2.equals(" "))
+        {
+            box2 = XsOrOs;
+        }
+        else if (turnChoice == 3 && box3.equals (" "))
+        {
+            box3 = XsOrOs;
+        }
+        else if (turnChoice == 4 && box4.equals (" "))
+        {
+            box4 = XsOrOs;
+        }
+        else if (turnChoice == 5 && box5.equals (" "))
+        {
+            box5 = XsOrOs;
+        }
+        else if (turnChoice == 6 && box6.equals (" "))
+        {
+            box6 = XsOrOs;
+        }
+        else if (turnChoice == 7 && box7.equals (" "))
+        {
+            box7 = XsOrOs;
+        }
+        else if (turnChoice == 8 && box8.equals (" "))
+        {
+            box8 = XsOrOs;
+        }
+        else if (turnChoice == 9 && box9.equals (" "))
+        {
+            box9 = XsOrOs;
+        }
+        else
+        {
+            System.out.println("Sorry, the computer already took this spot!");
+        }
+    
+    }
+    
+    public void computerTurn()
+    {
+        int cturn = (int)(Math.random() * 9) + 1;
+        if (cturn == 1) 
+        {
+            if (box1.equals (" "))
+            {
+                box1 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 2) 
+        {
+            if (box2.equals (" "))
+            {
+                box2 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 3) 
+        {
+            if (box3.equals (" "))
+            {
+                box3 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 4) 
+        {
+            if (box4.equals (" "))
+            {
+                box4 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 5) 
+        {
+            if (box5.equals (" "))
+            {
+                box5 =  computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 6) 
+        {
+            if (box6.equals (" "))
+            {
+                box6 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 7) 
+        {
+            if (box7.equals (" "))
+            {
+                box7 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 8) 
+        {
+            if (box8.equals (" "))
+            {
+                box8 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+        if (cturn == 9) 
+        {
+            if (box9.equals (" "))
+            {
+                box9 = computerPlays;
+            }
+            else
+            {
+                cturn = (int)(Math.random() * 9) + 1;
+            }
+        }
+    }
+    public void checkIfDone()
+    {
+        //PLAYER PART
+        //Horizontals
+        if (box1.equals (XsOrOs) && box2.equals (XsOrOs) && box3.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box4.equals (XsOrOs) && box5.equals (XsOrOs) && box6.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box7.equals (XsOrOs) && box8.equals (XsOrOs) && box9.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        //Verticals
+        else if (box1.equals (XsOrOs) && box4.equals (XsOrOs) && box7.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box2.equals (XsOrOs) && box5.equals (XsOrOs) && box8.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box3.equals (XsOrOs) && box6.equals (XsOrOs) && box9.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        //Diagonals
+        else if (box1.equals (XsOrOs) && box5.equals (XsOrOs) && box9.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box7.equals (XsOrOs) && box5.equals (XsOrOs) && box3.equals (XsOrOs))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        //COMPUTER PART
+        //Horizontals
+        else if (box1.equals (computerPlays) && box2.equals (computerPlays) && box3.equals (computerPlays))
+        {
+            System.out.println("Computer wins!");
+            gameOver = 10;
+        }
+        else if (box4.equals (computerPlays) && box5.equals (computerPlays) && box6.equals (computerPlays))
+        {
+            System.out.println("Computer wins!");
+            gameOver = 10;
+        }
+        else if (box7.equals (computerPlays) && box8.equals (computerPlays) && box9.equals (computerPlays))
+        {
+            System.out.println("Computer wins!");
+            gameOver = 10;
+        }
+        //Verticals
+        else if (box1.equals (computerPlays) && box4.equals (computerPlays) && box7.equals (computerPlays))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box2.equals (computerPlays) && box5.equals (computerPlays) && box8.equals (computerPlays))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        else if (box3.equals (computerPlays) && box6.equals (computerPlays) && box9.equals (computerPlays))
+        {
+            System.out.println("Player wins!");
+            gameOver = 10;
+        }
+        //diagonals
+        else if (box1.equals (computerPlays) && box5.equals (computerPlays) && box9.equals (computerPlays))
+        {
+            System.out.println("Computer wins!");
+            gameOver = 10;
+        }
+        else if (box7.equals (computerPlays) && box5.equals (computerPlays) && box3.equals (computerPlays))
+        {
+            System.out.println("Computer wins!");
+            gameOver = 10;
+        }
+        
+    }
+}ConsoleProgram.java:
+----
+import java.util.*;
+
+public class ConsoleProgram{
+
+    private Scanner scanner;
+
+    public static void main(String[] args){
+        // Assume the class name is passed in as the first argument.
+
+        if(args.length == 0){
+            System.out.println("Please provide the name of the main class as an argument.");
+            return;
+        }
+
+        String mainClassName = args[0];
+
+        try{
+            Class mainClass = Class.forName(mainClassName);
+            Object obj = mainClass.newInstance();
+            ConsoleProgram program = (ConsoleProgram)obj;
+            program.run();
+        } catch (IllegalAccessException ex) {
+            System.out.println("Error in program. Make sure you extend ConsoleProgram");
+        } catch (InstantiationException ex) {
+            System.out.println("Error in program. Make sure you extend ConsoleProgram");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Error in program. Make sure you extend ConsoleProgram");
+        }
+    }
+
+    public void run(){
+        /* Overridden by subclass */
+    }
+
+    public ConsoleProgram(){
+        scanner = new Scanner(System.in);
+
+    }
+
+    public String readLine(String prompt){
+        System.out.print(prompt);
+        return scanner.nextLine();
+    }
+
+    public boolean readBoolean(String prompt){
+
+        while(true){
+            String input = readLine(prompt);
+
+            if(input.equalsIgnoreCase("true")){
+                return true;
+            }
+
+            if(input.equalsIgnoreCase("false")){
+                return false;
+            }
+        }
+    }
+
+    public double readDouble(String prompt){
+
+        while(true){
+            String input = readLine(prompt);
+            try {
+                double n = Double.valueOf(input).doubleValue();
+                return n;
+            } catch (NumberFormatException e){
+
+            }
+        }
+    }
+
+    // Allow the user to get an integer.
+    public int readInt(String prompt){
+
+        while(true){
+            String input = readLine(prompt);
+            try {
+                int n = Integer.parseInt(input);
+                return n;
+            } catch (NumberFormatException e){
+
+            }
+        }
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println()
+     */
+    public void println() {
+        System.out.println();
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(String s)
+     */
+    public void println(String s) {
+        System.out.println(s);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(boolean x)
+     */
+    public void println(boolean x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(char x)
+     */
+    public void println(char x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(char[] x)
+     */
+    public void println(char[] x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(int x)
+     */
+    public void println(int x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(long x)
+     */
+    public void println(long x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(float x)
+     */
+    public void println(float x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(double x)
+     */
+    public void println(double x) {
+        System.out.println(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.println(Object o)
+     */
+    public void println(Object o) {
+        System.out.println(o);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print()
+     */
+    public void print() {
+        System.out.print("");
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(String s)
+     */
+    public void print(String s) {
+        System.out.print(s);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(boolean x)
+     */
+    public void print(boolean x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(char x)
+     */
+    public void print(char x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(char[] x)
+     */
+    public void print(char[] x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(int x)
+     */
+    public void print(int x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(long x)
+     */
+    public void print(long x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(float x)
+     */
+    public void print(float x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(double x)
+     */
+    public void print(double x) {
+        System.out.print(x);
+    }
+
+    /**
+     * Allows us to use a shorthand version for System.out.print(Object o)
+     */
+    public void print(Object o) {
+        System.out.print(o);
+    }
+}
+
+
